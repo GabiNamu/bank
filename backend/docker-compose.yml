@@ -23,7 +23,7 @@ services:
       - 3998:3306
     env_file:
       - .env
-    volumes:
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
-    cap_add:
-      - SYS_NICE
+    # volumes:
+    #   - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+    # cap_add:
+    #   - SYS_NICE
