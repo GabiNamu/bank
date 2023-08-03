@@ -1,7 +1,7 @@
 import { Model, INTEGER, DATEONLY, DECIMAL } from 'sequelize';
 import db from '.';
 import ITransaction from '../../interfaces/ITransaction';
-import Account from './account.model';
+import Account from './Account.model';
 
 class Transaction extends Model<ITransaction> {
 	declare 'id': number;
