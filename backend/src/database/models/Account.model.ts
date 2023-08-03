@@ -4,7 +4,7 @@ import IAccount from '../../interfaces/IAccount';
 
 class Account extends Model<IAccount> {
 	declare 'id': number;
-	declare 'cpf/cnpj': string;
+	declare 'documento': string;
 	declare 'name': string;
 	declare 'email': string;
 	declare 'password': string;
@@ -18,7 +18,7 @@ Account.init({
 		primaryKey: true,
 		type: INTEGER,
 	},
-	'cpf/cnpj': {
+	documento: {
 		allowNull: false,
 		type: STRING,
 	},

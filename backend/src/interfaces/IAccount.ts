@@ -1,6 +1,6 @@
 interface IAccount {
   'id'?: number,
-  'cpf/cnpj': string,
+  'documento': string,
   'name': string,
   'email': string,
   'password': string,

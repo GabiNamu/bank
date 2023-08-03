@@ -10,7 +10,7 @@ exports.default = {
                 primaryKey: true,
                 type: sequelize_1.DataTypes.INTEGER,
             },
-            'cpf/cnpj': {
+            documento: {
                 allowNull: false,
                 type: sequelize_1.DataTypes.STRING,
             },
@@ -27,8 +27,8 @@ exports.default = {
                 type: sequelize_1.DataTypes.STRING,
             },
             status: {
-                allowNull: false,
                 type: sequelize_1.DataTypes.BOOLEAN,
+                defaultValue: true,
             }
         });
     },

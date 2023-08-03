@@ -11,7 +11,7 @@ export default {
 				primaryKey: true,
 				type: DataTypes.INTEGER,
 			},
-			'cpf/cnpj': {
+			documento: {
 				allowNull: false,
 				type: DataTypes.STRING,
 			},
@@ -28,8 +28,8 @@ export default {
 				type: DataTypes.STRING,
 			},
 			status: {
-				allowNull: false,
 				type: DataTypes.BOOLEAN,
+				defaultValue: true,
 			}
 		}); 
 	}, 

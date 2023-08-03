@@ -11,7 +11,6 @@ class App {
 	
 		this.config();
 	
-		// Não remover essa rota
 		this.app.get('/health', (_req, res) => res.status(200).send('API no ar!'));
 		this.app.get('/', (req, res) => res.json({ ok: true }));
 		this.app.use('/account', this.account);
@@ -28,9 +27,6 @@ class App {
 		this.app.use(express.json());
 		this.app.use(accessControl);
 	}
-
-	// Não remover essa rota
-		
 
 	public start(PORT: string | number):void {
 		this.app.listen(PORT, () => console.log(`API no ar na porta ${PORT}!`));
