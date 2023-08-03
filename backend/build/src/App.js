@@ -2,14 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const account_router_1 = require("./routers/account.router");
+const login_router_1 = require("./routers/login.router");
 class App {
-    constructor(account = account_router_1.default) {
+    constructor(account = account_router_1.default, login = login_router_1.default) {
         this.account = account;
+        this.login = login;
         this.app = express();
         this.config();
         this.app.get('/health', (_req, res) => res.status(200).send('API no ar!'));
         this.app.get('/', (req, res) => res.json({ ok: true }));
         this.app.use('/account', this.account);
+        this.app.use('/login', this.login);
     }
     config() {
         const accessControl = (_req, res, next) => {

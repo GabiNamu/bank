@@ -6,6 +6,10 @@ class AccountService {
         const account = await Account_model_1.default.create(newAccount);
         return account;
     }
+    static async update(newInfo, id) {
+        await Account_model_1.default.update(newInfo, { where: { id } });
+        return { message: 'updated' };
+    }
 }
 exports.default = AccountService;
 //# sourceMappingURL=Account.service.js.map

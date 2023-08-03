@@ -1,11 +1,13 @@
 import express = require('express');
 import accountRouter from './routers/account.router';
+import loginRouter from './routers/login.router';
 
 class App {
 	public app: express.Express;
 
 	constructor(
 			private account = accountRouter,
+			private login = loginRouter
 	) {
 		this.app = express();
 	
@@ -14,6 +16,7 @@ class App {
 		this.app.get('/health', (_req, res) => res.status(200).send('API no ar!'));
 		this.app.get('/', (req, res) => res.json({ ok: true }));
 		this.app.use('/account', this.account);
+		this.app.use('/login', this.login);
 	}
 
 	private config():void {
